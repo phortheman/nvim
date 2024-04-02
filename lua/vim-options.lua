@@ -17,7 +17,7 @@ vim.cmd("set cursorline")
 vim.cmd("set scrolloff=10")
 
 -- Don't let the cursor scoll too far left or right of N column position
-vim.cmd("set sidescrolloff=40")
+vim.cmd("set sidescrolloff=20")
 
 -- Don't line wrap
 vim.cmd("set nowrap")
