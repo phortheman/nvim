@@ -11,6 +11,7 @@ return {
 			},
 			vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
 				noremap = true,
+				desc = "List current auto sessions",
 			}),
 		})
 	end,

@@ -10,7 +10,7 @@ return {
 		})
 
 		-- Shortcut to format the current buffer
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format buffer" })
 
 		-- Auto format on buffer write
 		vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])

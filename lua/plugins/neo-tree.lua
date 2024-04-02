@@ -17,6 +17,6 @@ return {
 				},
 			},
 		})
-		vim.keymap.set("n", "<C-b>", ":Neotree focus<CR>", { silent = true })
+		vim.keymap.set("n", "<C-b>", ":Neotree focus<CR>", { silent = true, desc = "Sidebar toggle" })
 	end,
 }
