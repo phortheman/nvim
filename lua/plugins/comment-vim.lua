@@ -1,6 +1,7 @@
 return {
 	-- "tpope/vim-commentary", cool but uses vimscript and unsure how to customize the mappings
 	"numToStr/Comment.nvim",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("Comment").setup({
 			toggler = {
