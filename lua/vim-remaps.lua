@@ -20,3 +20,6 @@ vim.keymap.set(
 	'"+p',
 	{ noremap = true, silent = true, desc = "Paste content from the system clipboard" }
 )
+
+-- Clear highlighting
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { silent = true, desc = "Clear highlighting" })
