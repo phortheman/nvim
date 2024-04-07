@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("vim-remaps")
-require("lazy").setup( {
+require("lazy").setup({
 	{ import = "plugins" },
 	{ import = "plugins.lsp" },
+	{ import = "plugins.ui" },
 })
