@@ -4,9 +4,6 @@
 
 ]]
 
--- Vim's leader character declaration
-vim.g.mapleader = " "
-
 -- Add line numbers
 vim.cmd("set number")
 
