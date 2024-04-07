@@ -17,10 +17,10 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 20
 
 -- Don't line wrap
-vim.opt.nowrap = true
+vim.opt.wrap = false
 
 -- Draw a line at column position N to show an ideal column max
-vim.opt.colorcolumn = 160
+vim.opt.colorcolumn = "160"
 
 --[[
 
@@ -61,9 +61,9 @@ vim.opt.autoindent = true
 -- Allows custom characters given certain scenarios
 -- Needed to do the vim.opt method due to odd behavior to get my tab right
 vim.opt.list = true
-vim.opt.listchars:append({
+vim.opt.listchars = {
 	tab = "▸ ",
 	trail = "·",
 	nbsp = "␣",
 	multispace = "·",
-})
+}
