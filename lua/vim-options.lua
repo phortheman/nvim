@@ -5,22 +5,22 @@
 ]]
 
 -- Add line numbers
-vim.cmd("set number")
+vim.opt.number = true
 
 -- Highlight the current line the cursor is on
-vim.cmd("set cursorline")
+vim.opt.cursorline = true
 
 -- Dont' let the cursor scroll below or above the N lines
-vim.cmd("set scrolloff=10")
+vim.opt.scrolloff = 10
 
 -- Don't let the cursor scoll too far left or right of N column position
-vim.cmd("set sidescrolloff=20")
+vim.opt.sidescrolloff = 20
 
 -- Don't line wrap
-vim.cmd("set nowrap")
+vim.opt.nowrap = true
 
 -- Draw a line at column position N to show an ideal column max
-vim.cmd("set colorcolumn=160")
+vim.opt.colorcolumn = 160
 
 --[[
 
@@ -30,13 +30,13 @@ vim.cmd("set colorcolumn=160")
 --vim.cmd("set cursorcolumn")
 
 -- Highlight matching characters while searching
-vim.cmd("set incsearch")
+vim.opt.incsearch = true
 
 -- Ignore case when searching
-vim.cmd("set ignorecase")
+vim.opt.ignorecase = true
 
 -- Override above to allow to search specifically for capitialized characters
-vim.cmd("set smartcase")
+vim.opt.smartcase = true
 
 --[[
 
@@ -47,16 +47,16 @@ vim.cmd("set smartcase")
 --vim.cmd("set expandtab")
 
 -- Set the width of tabs
-vim.cmd("set tabstop=4")
+vim.opt.tabstop = 4
 
 -- How many chars are created/removed when hitting tab/backspace
-vim.cmd("set softtabstop=4")
+vim.opt.softtabstop = 4
 
 -- Number of spaces used for each step
-vim.cmd("set shiftwidth=4")
+vim.opt.shiftwidth = 4
 
 -- Automatically indent correctly
-vim.cmd("set autoindent")
+vim.opt.autoindent = true
 
 -- Allows custom characters given certain scenarios
 -- Needed to do the vim.opt method due to odd behavior to get my tab right
