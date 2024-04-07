@@ -67,3 +67,16 @@ vim.opt.listchars = {
 	nbsp = "␣",
 	multispace = "·",
 }
+--[[
+
+	Misc Settings
+
+--]]
+
+-- Decrease the updatetime so the file is saved if idle too long
+vim.opt.updatetime = 400
+
+vim.opt.timeoutlen = 300
+
+-- Enable search highlight
+vim.opt.hlsearch = true
