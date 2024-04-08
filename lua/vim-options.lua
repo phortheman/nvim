@@ -66,6 +66,7 @@ vim.opt.listchars = {
 	trail = "·",
 	nbsp = "␣",
 	multispace = "·",
+	lead = "·",
 }
 --[[
 
