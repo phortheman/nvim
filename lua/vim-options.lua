@@ -22,6 +22,9 @@ vim.opt.wrap = false
 -- Draw a line at column position N to show an ideal column max
 vim.opt.colorcolumn = "160"
 
+-- Stop vim from making lines longer than 80 wrap (problem with unknown files)
+vim.opt.textwidth = 0
+
 --[[
 
 	Useful things to remember as vim settings
