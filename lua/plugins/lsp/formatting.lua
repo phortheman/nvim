@@ -19,6 +19,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			go = { "goimports", "gofmt" },
+			xml = { "xmlformatter" },
 		},
 		format_on_save = {
 			lsp_fallback = true,
