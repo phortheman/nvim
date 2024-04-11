@@ -8,15 +8,15 @@
 -- Only applicable for visual mode
 vim.keymap.set(
 	{ "v", "x" },
-	"<C-c>",
+	"<leader>y",
 	'"+y',
 	{ noremap = true, silent = true, desc = "Copy content into the system clipboard" }
 )
 
 -- Remap for pasting from clipboard
 vim.keymap.set(
-	{ "n", "i", "v", "x" },
-	"<C-v>",
+	{ "n", "v", "x" },
+	"<leader>p",
 	'"+p',
 	{ noremap = true, silent = true, desc = "Paste content from the system clipboard" }
 )
