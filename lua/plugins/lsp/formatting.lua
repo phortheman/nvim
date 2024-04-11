@@ -21,12 +21,33 @@ return {
 			go = { "goimports", "gofmt" },
 			xml = { "xmlformatter" },
 		},
-		format_on_save = {
-			lsp_fallback = true,
-			timeout_ms = 500,
-		},
 		-- Conform will notify you when a formatter errors
 		notify_on_error = true,
 		-- Custom formatters and changes to built-in formatters
 	},
+	config = function()
+		local conform = require("conform")
+
+		-- List of file types to exclude from auto formatting
+		local excludedFiles = {
+			"xml",
+		}
+
+		-- The exact same thing as the auto format opt but with my exlcude list
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
+			callback = function(args)
+				for i = 1, #excludedFiles do
+					if vim.bo.filetype == excludedFiles[i] then
+						return
+					end
+				end
+				conform.format({
+					bufnr = args.buf,
+					timeout_ms = 500,
+					lsp_fallback = true,
+				})
+			end,
+		})
+	end,
 }
