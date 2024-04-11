@@ -6,21 +6,21 @@ return {
 		config = function()
 			require("Comment").setup({
 				toggler = {
-					line = "<leader>gcc",
-					block = "<leader>gbc",
+					line = "<leader>cl",
+					block = "<leader>cb",
 				},
 				opleader = {
-					line = "<leader>gcc",
-					block = "<leader>gbc",
+					line = "<leader>cl",
+					block = "<leader>cb",
 				},
 				extra = {
-					above = "<leader>gcO",
-					below = "<leader>gco",
-					eol = "<leader>gcA",
+					above = "<leader>cO",
+					below = "<leader>co",
+					eol = "<leader>cA",
 				},
 				mappings = {
-					basic = false,
-					extra = false,
+					basic = true,
+					extra = true,
 				},
 			})
 		end,
