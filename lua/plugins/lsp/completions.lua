@@ -2,6 +2,7 @@ return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
 		"L3MON4D3/LuaSnip",
+		version = "v2.*",
 		build = (function()
 			if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
 				return
@@ -10,9 +11,6 @@ return {
 		end)(),
 		dependencies = {
 			"rafamadriz/friendly-snippets",
-			config = function()
-				require("luasnip.loaders.from_vscode").lazy_load()
-			end,
 		},
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
@@ -21,8 +19,23 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local vscode_snippets = require("luasnip.loaders.from_vscode")
 
-		luasnip.config.setup({})
+		-- Custom logic to load project .code-snippets that are stored in the .vscode dir
+		-- Neovim must be launch in the projects root dir to work
+		-- TODO: Kind of working? Sometime a snippet isn't loading in if there are many snippets on one file
+		local cwd = vim.fn.getcwd()
+		local vscode_path = vim.fn.fnamemodify(cwd, ":p") .. ".vscode/"
+		local glob_pattern = vscode_path .. "*.code-snippets"
+		local snippet_files = vim.fn.glob(glob_pattern, false, true)
+
+		vscode_snippets.lazy_load()
+
+		for _, snippet_file in ipairs(snippet_files) do
+			vscode_snippets.load_standalone({
+				path = snippet_file
+			})
+		end
 
 		cmp.setup({
 			snippet = {
