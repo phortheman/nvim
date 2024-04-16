@@ -4,6 +4,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 		build = (function()
+			-- NOTE: You may need to do this manually. Required for VS Code snippets to do subsitutions
 			if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
 				return
 			end
@@ -23,7 +24,6 @@ return {
 
 		-- Custom logic to load project .code-snippets that are stored in the .vscode dir
 		-- Neovim must be launch in the projects root dir to work
-		-- TODO: Kind of working? Sometime a snippet isn't loading in if there are many snippets on one file
 		local cwd = vim.fn.getcwd()
 		local vscode_path = vim.fn.fnamemodify(cwd, ":p") .. ".vscode/"
 		local glob_pattern = vscode_path .. "*.code-snippets"
