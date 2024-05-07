@@ -31,6 +31,7 @@ return {
 		-- List of file types to exclude from auto formatting
 		local excludedFiles = {
 			"xml",
+			"sql",
 		}
 
 		-- The exact same thing as the auto format opt but with my exlcude list
