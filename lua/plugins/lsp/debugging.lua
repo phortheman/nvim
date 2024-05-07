@@ -11,6 +11,7 @@ return {
 
 			-- Manual installed debuggers
 			"leoluz/nvim-dap-go",
+			"mfussenegger/nvim-dap-python",
 		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
@@ -65,6 +66,8 @@ return {
 
 			-- Install golang specific config
 			require("dap-go").setup()
+			-- Install python specific config
+			require("dap-python").setup()
 		end,
 	},
 }
