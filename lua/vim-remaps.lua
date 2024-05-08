@@ -21,7 +21,10 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "Paste content from the system clipboard" }
 )
 
+-- Plain text related remaps
 vim.keymap.set("n", "<leader>ww", "<CMD>setlocal wrap<CR>", { desc = "Turn on [w]ord [w]rap on current buffer" })
+vim.keymap.set("n", "<leader>sc", "<CMD>setlocal spell spelllang=en_us<CR>",
+	{ desc = "Turn on [s]pell [c]heck on the current buffer. [/]s to goto next and z= to see suggestion" })
 
 -- Clear highlighting
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
