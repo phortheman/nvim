@@ -20,7 +20,7 @@ return {
 			lua = { "stylua" },
 			go = { "goimports", "gofmt" },
 			xml = { "xmlformatter" },
-			python = { "ruff" },
+			python = { "isort", "black" },
 		},
 		-- Conform will notify you when a formatter errors
 		notify_on_error = true,
