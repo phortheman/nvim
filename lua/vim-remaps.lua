@@ -21,6 +21,8 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "Paste content from the system clipboard" }
 )
 
+vim.keymap.set("n", "<leader>ww", "<CMD>setlocal wrap<CR>", { desc = "Turn on [w]ord [w]rap on current buffer" })
+
 -- Clear highlighting
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
 
