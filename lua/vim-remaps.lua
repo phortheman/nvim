@@ -27,7 +27,14 @@ vim.keymap.set("n", "<leader>sc", "<CMD>setlocal spell spelllang=en_us<CR>",
 	{ desc = "Turn on [s]pell [c]heck on the current buffer. [/]s to goto next and z= to see suggestion" })
 
 -- Clear highlighting
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
+vim.keymap.set("n", "<Esc>", function()
+	local cur_timeout = vim.o.timeoutlen
+	vim.o.timeoutlen = 10
+	if vim.v.hlsearch == 1 then
+		vim.api.nvim_exec("noh", false)
+	end
+	vim.o.timeoutlen = cur_timeout
+end, { silent = true })
 
 -- Better window moving
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
