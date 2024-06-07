@@ -12,11 +12,26 @@ return {
 		-- Automatically setup servers using the default capabilities
 		mason_lspconfig.setup_handlers({
 			function(server_name)
-				lspconfig[server_name].setup({
+				-- Default opts
+				local opts = {
 					capabilities = capabilities,
-				})
+				}
+
+				-- Custom opts per LSP
+				if server_name == "pylsp" then
+					opts.settings = {
+						pylsp = {
+							plugins = {
+								pycodestyle = {
+									ignore = { "E501" }
+								}
+							}
+						}
+					}
+				end
+
+				lspconfig[server_name].setup(opts)
 			end,
-			-- Add custom settings required below
 		})
 
 		-- LSP functions that can use Telescope UI
